@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recognition View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RecognitionViewController" customModule="FaceRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFi-4G-Q5H">
+                                <rect key="frame" x="137" y="251" width="100" height="100"/>
+                                <state key="normal" image="faceId"/>
+                                <connections>
+                                    <action selector="recognizeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jVJ-Jy-VGG"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihR-hi-mIk" customClass="VideoPreviewView" customModule="FaceRecognition" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ses-Uf-fXF">
+                                        <rect key="frame" x="182" y="24" width="10.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ses-Uf-fXF" firstAttribute="centerX" secondItem="ihR-hi-mIk" secondAttribute="centerX" id="AxW-Bz-bKo"/>
+                                    <constraint firstItem="ses-Uf-fXF" firstAttribute="top" secondItem="ihR-hi-mIk" secondAttribute="top" constant="24" id="Tmr-9N-6p0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MFi-4G-Q5H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-32" id="IXT-Ik-kUr"/>
+                            <constraint firstItem="ihR-hi-mIk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UB0-Jg-mey"/>
+                            <constraint firstItem="ihR-hi-mIk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WGe-qp-iuv"/>
+                            <constraint firstItem="MFi-4G-Q5H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n2e-Kg-mqS"/>
+                            <constraint firstItem="ihR-hi-mIk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o6y-At-HGR"/>
+                            <constraint firstItem="ihR-hi-mIk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oMh-F2-Ec3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="ses-Uf-fXF" id="72i-g3-BwZ"/>
+                        <outlet property="videoView" destination="ihR-hi-mIk" id="SPu-rn-gRd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.5" y="31.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="faceId" width="100" height="100"/>
+    </resources>
+</document>
